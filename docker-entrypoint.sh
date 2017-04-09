@@ -10,6 +10,7 @@ function set_nifi_properties()  {
         sed -e "s~$key=.*~$key=$value~" -i $NIFI_HOME/conf/nifi.properties
     done
     IFS=$SAVEIFS
+    echo nifi.nar.library.directory.custom=/nars/custom >> $NIFI_HOME/conf/nifi.properties
 }
 
 function set_java() {
